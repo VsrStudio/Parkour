@@ -26,6 +26,8 @@ class Main extends PluginBase implements Listener {
 
     public function onPlayerJoin(PlayerJoinEvent $event): void {
         $player = $event->getPlayer();
+        // Menggunakan logger untuk menginformasikan bahwa pemain bergabung
+        $this->getLogger()->info("{$player->getName()} has joined the game.");
         $player->sendMessage("Selamat datang di Parkour! Gunakan perintah /parkour untuk mulai.");
     }
 }
