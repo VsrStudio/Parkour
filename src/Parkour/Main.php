@@ -1,9 +1,6 @@
 namespace Parkour\utils;
 
 use pocketmine\plugin\PluginBase;
-use pocketmine\plugin\PluginManager;
-use pocketmine\command\Command;
-use pocketmine\command\CommandSender;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerJoinEvent;
 
@@ -11,12 +8,12 @@ class Main extends PluginBase implements Listener {
     private static $instance;
 
     public function onLoad(): void {
-        self::$instance = $this; // Menyimpan instance plugin
+        self::$instance = $this;
     }
 
     public function onEnable(): void {
         $this->getLogger()->info("Parkour plugin enabled.");
-        $this->getServer()->getPluginManager()->registerEvents($this, $this); // Mendaftarkan event listener
+        $this->getServer()->getPluginManager()->registerEvents($this, $this);
     }
 
     public function onDisable(): void {
@@ -24,7 +21,7 @@ class Main extends PluginBase implements Listener {
     }
 
     public static function getInstance(): self {
-        return self::$instance; // Mengembalikan instance plugin
+        return self::$instance;
     }
 
     public function onPlayerJoin(PlayerJoinEvent $event): void {
@@ -32,8 +29,7 @@ class Main extends PluginBase implements Listener {
         $player->sendMessage("Selamat datang di Parkour! Gunakan perintah /parkour untuk mulai.");
     }
 
-    // Mengembalikan logger untuk mencatat pesan
     public function getLogger() {
-        return parent::getLogger(); 
+        return parent::getLogger();
     }
 }
