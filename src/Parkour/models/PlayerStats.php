@@ -22,4 +22,8 @@ class PlayerStats {
     public function getCheckpointReached(): int {
         return $this->checkpointReached;
     }
+
+    public function displayStats(): string {
+        return "Player: $this->playerName, Time Taken: $this->timeTaken, Checkpoints Reached: $this->checkpointReached";
+    }
 }
