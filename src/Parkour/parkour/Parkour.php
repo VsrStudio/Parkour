@@ -1,13 +1,15 @@
-<?php
-
 namespace Parkour\parkour;
 
-class Parkour {
-    private $checkpoints = [];
+use pocketmine\math\Vector3;
 
-    public function addCheckpoint($checkpoint) {
-        $this->checkpoints[] = $checkpoint;
+class Parkour {
+    private array $checkpoints = [];
+
+    public function addCheckpoint(Vector3 $position): void {
+        $this->checkpoints[] = $position; // Menambahkan checkpoint baru
     }
 
-    // Metode lain untuk mengelola logika parkour
+    public function getCheckpoints(): array {
+        return $this->checkpoints; // Mengembalikan daftar checkpoint
+    }
 }
