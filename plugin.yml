@@ -1,7 +1,7 @@
 name: ParkourPlugin
 version: 1.0.0
 api: [5.0.0]
-main: ParkourPlugin\Main
+main: Parkour\Main
 description: "Plugin untuk membuat dan mengelola minigame parkour di PocketMine."
 author: "VsrStudio"
 website: "https://discord.gg/uGFCkc83"
