@@ -6,7 +6,6 @@ use pocketmine\player\Player;
 use Parkour\parkour\Parkour;
 
 class ParkourCommand extends Command {
-
     public function __construct() {
         parent::__construct("parkour", "Perintah Parkour", "/parkour", []);
         $this->setPermission("parkour.command");
@@ -44,5 +43,5 @@ class ParkourCommand extends Command {
         return true;
     }
 
-    // Definisikan metode untuk startParkour, stopParkour, dll.
+    // Implementasi metode lainnya di sini
 }
