@@ -1,4 +1,4 @@
-name: ParkourPlugin
+name: Parkour
 version: 1.0.0
 api: [5.0.0]
 main: Parkour\Main
