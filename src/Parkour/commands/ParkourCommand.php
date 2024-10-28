@@ -3,7 +3,7 @@ namespace Parkour\commands;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
-use Parkour\parkour\Parkour;
+use Parkour\utils\Main; // Pastikan untuk mengimpor kelas Main
 
 class ParkourCommand extends Command {
 
@@ -14,8 +14,7 @@ class ParkourCommand extends Command {
 
     public function execute(CommandSender $sender, string $commandLabel, array $args): bool {
         if (!$sender instanceof Player) {
-            // Menggunakan logger untuk mencatat peringatan
-            $this->getPlugin()->getLogger()->warning("Perintah ini hanya dapat digunakan di dalam permainan.");
+            Main::getInstance()->getLogger()->warning("Perintah ini hanya dapat digunakan di dalam permainan.");
             return true;
         }
 
@@ -39,7 +38,7 @@ class ParkourCommand extends Command {
                 $this->setCheckpoint($sender);
                 break;
             default:
-                $this->getPlugin()->getLogger()->info("Perintah tidak dikenal.");
+                Main::getInstance()->getLogger()->info("Perintah tidak dikenal.");
                 break;
         }
         return true;
