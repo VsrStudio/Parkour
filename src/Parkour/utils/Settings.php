@@ -1,8 +1,10 @@
 namespace Parkour\utils;
 
+use Parkour\utils\Main;
+
 class Settings {
     public static function someMethod() {
-        $pluginInstance = Main::getInstance(); // Memastikan Anda menggunakan instance Main
+        $pluginInstance = Main::getInstance();
         // Implementasi logika lain
     }
 }
