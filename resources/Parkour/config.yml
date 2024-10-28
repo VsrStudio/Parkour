@@ -1,0 +1,3 @@
+settings:
+  time_limit: 300
+  checkpoint_enabled: true
