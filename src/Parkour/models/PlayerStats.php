@@ -1,17 +1,25 @@
-<?php
-
 namespace Parkour\models;
 
 class PlayerStats {
-    private $playerName;
-    private $timeTaken;
-    private $checkpointReached;
+    private string $playerName;
+    private int $timeTaken;
+    private int $checkpointReached;
 
-    public function __construct(string $playerName) {
+    public function __construct(string $playerName, int $timeTaken, int $checkpointReached) {
         $this->playerName = $playerName;
-        $this->timeTaken = 0;
-        $this->checkpointReached = 0;
+        $this->timeTaken = $timeTaken;
+        $this->checkpointReached = $checkpointReached;
     }
 
-    // Getter dan setter untuk atribut
+    public function getPlayerName(): string {
+        return $this->playerName;
+    }
+
+    public function getTimeTaken(): int {
+        return $this->timeTaken;
+    }
+
+    public function getCheckpointReached(): int {
+        return $this->checkpointReached;
+    }
 }
