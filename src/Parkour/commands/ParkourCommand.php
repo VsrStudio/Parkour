@@ -45,25 +45,31 @@ class ParkourCommand extends Command {
 
     private function startParkour(Player $player) {
         // Implementasi logika start parkour
+        $player->sendMessage("Parkour dimulai!"); // Menggunakan sendMessage untuk memberi tahu pemain
     }
 
     private function stopParkour(Player $player) {
         // Implementasi logika stop parkour
+        $player->sendMessage("Parkour dihentikan!");
     }
 
     private function showLeaderboard(Player $player) {
         // Implementasi logika leaderboard
+        $player->sendMessage("Menampilkan leaderboard...");
     }
 
     private function showSettings(Player $player) {
         // Implementasi logika settings
+        $player->sendMessage("Menampilkan pengaturan...");
     }
 
     private function showStats(Player $player) {
         // Implementasi logika stats
+        $player->sendMessage("Menampilkan statistik...");
     }
 
     private function setCheckpoint(Player $player) {
         // Implementasi logika checkpoint
+        $player->sendMessage("Checkpoint telah disetel!");
     }
 }
