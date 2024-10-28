@@ -1,0 +1,25 @@
+name: ParkourPlugin
+version: 1.0.0
+api: [5.0.0]
+main: ParkourPlugin\Main
+description: "Plugin untuk membuat dan mengelola minigame parkour di PocketMine."
+author: "VsrStudio"
+website: "https://discord.gg/uGFCkc83"
+
+commands:
+  parkour:
+    description: "Perintah utama untuk mengelola parkour."
+    usage: "/parkour <start|stop|leaderboard|settings|stats|set|checkpoint>"
+    aliases: ["/p"]
+
+permissions:
+  parkour.command:
+    description: "Memberikan akses untuk menggunakan perintah parkour."
+    default: true
+  parkour.admin:
+    description: "Memberikan akses untuk mengelola pengaturan parkour."
+    default: op
+
+# Jika ada dependensi plugin lain, bisa ditambahkan di sini
+#depend: 
+#  - SomeOtherPlugin
