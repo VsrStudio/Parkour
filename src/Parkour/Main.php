@@ -32,7 +32,8 @@ class Main extends PluginBase implements Listener {
         $player->sendMessage("Selamat datang di Parkour! Gunakan perintah /parkour untuk mulai.");
     }
 
+    // Mengembalikan logger untuk mencatat pesan
     public function getLogger() {
-        return $this->getLogger(); // Mengembalikan logger untuk mencatat pesan
+        return parent::getLogger(); 
     }
 }
