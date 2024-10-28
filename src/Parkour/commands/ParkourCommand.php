@@ -14,10 +14,17 @@ class ParkourCommand extends Command {
     public function execute(CommandSender $sender, string $commandLabel, array $args): bool {
         if (!$sender instanceof Player) {
             Main::getInstance()->getLogger()->warning("Perintah ini hanya dapat digunakan di dalam permainan.");
+            $sender->sendMessage("Perintah ini hanya dapat digunakan di dalam permainan."); // Kirim pesan ke pengirim
             return true;
         }
 
-        switch ($args[0] ?? "") {
+        if (empty($args)) {
+            Main::getInstance()->getLogger()->info("Perintah tidak dikenal.");
+            $sender->sendMessage("Gunakan /parkour [start|stop|leaderboard|settings|stats|checkpoint].");
+            return true;
+        }
+
+        switch ($args[0]) {
             case "start":
                 $this->startParkour($sender);
                 break;
@@ -38,38 +45,11 @@ class ParkourCommand extends Command {
                 break;
             default:
                 Main::getInstance()->getLogger()->info("Perintah tidak dikenal.");
+                $sender->sendMessage("Perintah tidak dikenal. Gunakan /parkour [start|stop|leaderboard|settings|stats|checkpoint].");
                 break;
         }
         return true;
     }
 
-    private function startParkour(Player $player) {
-        // Implementasi logika start parkour
-        $player->sendMessage("Parkour dimulai!"); // Menggunakan sendMessage untuk memberi tahu pemain
-    }
-
-    private function stopParkour(Player $player) {
-        // Implementasi logika stop parkour
-        $player->sendMessage("Parkour dihentikan!");
-    }
-
-    private function showLeaderboard(Player $player) {
-        // Implementasi logika leaderboard
-        $player->sendMessage("Menampilkan leaderboard...");
-    }
-
-    private function showSettings(Player $player) {
-        // Implementasi logika settings
-        $player->sendMessage("Menampilkan pengaturan...");
-    }
-
-    private function showStats(Player $player) {
-        // Implementasi logika stats
-        $player->sendMessage("Menampilkan statistik...");
-    }
-
-    private function setCheckpoint(Player $player) {
-        // Implementasi logika checkpoint
-        $player->sendMessage("Checkpoint telah disetel!");
-    }
-}
+    private function startParkour(Player $player): void {
+        // Implement
